@@ -1,4 +1,8 @@
 <script lang="ts">
+  import Sun from "$lib/assets/icons/Sun.svelte";
+  import Moon from "$lib/assets/icons/Moon.svelte";
+  import Refresh from "$lib/assets/icons/Refresh.svelte";
+
   let {
     isDark,
     activeBgTitle,
@@ -16,7 +20,7 @@
   <div class="inner">
     <div class="logo">
       <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-      CLA<span>BackGrounds</span>
+      CLA<span>Backgrounds</span>
     </div>
 
     <div class="right">
@@ -27,7 +31,7 @@
           aria-label="Reiniciar fondo"
           title="Reiniciar fondo"
         >
-          <i class="fa-solid fa-rotate-left fa-fw" aria-hidden="true"></i>
+          <Refresh />
         </button>
       {/if}
 
@@ -37,10 +41,11 @@
         aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
         title={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       >
-        <i
-          class="fa-solid {isDark ? 'fa-sun' : 'fa-moon'} fa-fw"
-          aria-hidden="true"
-        ></i>
+        {#if isDark}
+          <Sun />
+        {:else}
+          <Moon />
+        {/if}
       </button>
     </div>
   </div>

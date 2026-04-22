@@ -5,6 +5,7 @@
   import BgCard from "$lib/components/BgCard.svelte";
   import CodeDrawer from "$lib/components/CodeDrawer.svelte";
   import { browser } from "$app/environment";
+  import GitHub from "$lib/assets/icons/GitHub.svelte";
 
   // Detectar preferencia del sistema: oscuro o claro
   const getSystemPreference = () => {
@@ -107,11 +108,6 @@
 <!-- Hero -->
 <section class="hero">
   <div class="inner">
-    <div class="hero-tag">
-      <div class="hero-tag-dot"></div>
-      fondos para tus proyectos
-    </div>
-
     <h1 class="hero-title">
       Fondos listos<br />
       <em>para copiar y usar.</em>
@@ -129,7 +125,7 @@
         rel="noopener noreferrer"
         class="github-btn"
       >
-        <i class="fa-brands fa-github" aria-hidden="true"></i>
+        <GitHub />
         GitHub
       </a>
     </div>
