@@ -1,5 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Copy from "$lib/assets/icons/Copy.svelte";
+  import Copy2 from "$lib/assets/icons/Copy2.svelte";
+  import Close from "$lib/assets/icons/Close.svelte";
 
   let {
     open = false,
@@ -86,7 +89,7 @@
         <div class="drawer-actions">
           <button class="dbtn" onclick={copyCode}>
             {#if copyState === "copied"}
-              <i class="fa-solid fa-check fa-fw" aria-hidden="true"></i>
+              <Copy2 />
               <span>copiado</span>
             {:else if copyState === "error"}
               <i
@@ -95,13 +98,11 @@
               ></i>
               <span>error</span>
             {:else}
-              <i class="fa-solid fa-copy fa-fw" aria-hidden="true"></i>
-              <span>copiar</span>
+              <Copy />
             {/if}
           </button>
           <button class="dbtn" onclick={onClose}>
-            <i class="fa-solid fa-xmark fa-fw" aria-hidden="true"></i>
-            <span>cerrar</span>
+            <Close />
           </button>
         </div>
       </div>

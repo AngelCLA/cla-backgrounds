@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Background } from "$lib/backgrounds";
+  import Code from "$lib/assets/icons/Code.svelte";
 
   let {
     bg,
@@ -31,7 +32,7 @@
       on:click|stopPropagation={() => onOpenCode(index)}
       aria-label="Ver código"
     >
-      <i class="fa-solid fa-code" aria-hidden="true"></i>
+      <Code />
     </button>
 
     <div class="thumb-bg">
@@ -42,7 +43,6 @@
       <span>aplicar</span>
     </div>
   </div>
-
 </div>
 
 <style>
