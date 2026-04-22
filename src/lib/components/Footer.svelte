@@ -1,12 +1,21 @@
 <footer>
   <p>
-    Made with ❤️ by
+    Made by
     <a
-      href="https://github.com/cla-bg"
+      href="https://github.com/AngelCLA"
       target="_blank"
       rel="noopener noreferrer"
     >
-      CLABackGrounds
+      CLA__Angel
+    </a>
+  </p>
+  <p>
+    Inspired by the work of <a
+      href="https://github.com/ibelick"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ibelick
     </a>
   </p>
 </footer>
@@ -16,7 +25,9 @@
     position: relative;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 40px 24px;
     border-top: 1px solid var(--border);
     margin-top: 60px;
