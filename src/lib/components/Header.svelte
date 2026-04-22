@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Code from "$lib/assets/icons/Code.svelte";
   import Sun from "$lib/assets/icons/Sun.svelte";
   import Moon from "$lib/assets/icons/Moon.svelte";
   import Refresh from "$lib/assets/icons/Refresh.svelte";
@@ -19,7 +20,7 @@
 <header>
   <div class="inner">
     <div class="logo">
-      <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+      <Code />
       CLA<span>Backgrounds</span>
     </div>
 
