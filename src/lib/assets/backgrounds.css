@@ -1,0 +1,318 @@
+/* ─────────────────────────────────────────────
+   Shared blob helper
+   (used by backgrounds that inject {@html} markup)
+───────────────────────────────────────────── */
+.bg-layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ─────────────────────────────────────────────
+   bg1 · Grid + Fuchsia
+───────────────────────────────────────────── */
+.bg1-light {
+  background-color: #fff;
+  background-image:
+    linear-gradient(to right,  #8080800a 1px, transparent 1px),
+    linear-gradient(to bottom, #8080800a 1px, transparent 1px);
+  background-size: 14px 24px;
+}
+.bg1-light .blob {
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60%; height: 60%;
+  border-radius: 9999px;
+  background: #e879f9; opacity: .20; filter: blur(80px);
+}
+.bg1-dark {
+  background-color: #09090b;
+  background-image:
+    linear-gradient(to right,  #ffffff08 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff08 1px, transparent 1px);
+  background-size: 14px 24px;
+}
+.bg1-dark .blob {
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60%; height: 60%;
+  border-radius: 9999px;
+  background: #a21caf; opacity: .25; filter: blur(80px);
+}
+
+/* ─────────────────────────────────────────────
+   bg2 · Puntos + Cyan
+───────────────────────────────────────────── */
+.bg2-light {
+  background-color: #fff;
+  background-image: radial-gradient(#d4d4d8 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.bg2-light .blob {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%; height: 40%;
+  border-radius: 9999px;
+  background: #22d3ee; opacity: .18; filter: blur(70px);
+}
+.bg2-dark {
+  background-color: #09090b;
+  background-image: radial-gradient(#3f3f46 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.bg2-dark .blob {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%; height: 40%;
+  border-radius: 9999px;
+  background: #0891b2; opacity: .30; filter: blur(70px);
+}
+
+/* ─────────────────────────────────────────────
+   bg3 · Diagonal + Amber
+───────────────────────────────────────────── */
+.bg3-light {
+  background-color: #fffbeb;
+  background-image: repeating-linear-gradient(
+    45deg, #fbbf2430 0, #fbbf2430 1px, transparent 0, transparent 50%
+  );
+  background-size: 16px 16px;
+}
+.bg3-light .blob {
+  position: absolute; bottom: -10%; right: -10%;
+  width: 50%; height: 50%;
+  border-radius: 9999px;
+  background: #f59e0b; opacity: .25; filter: blur(70px);
+}
+.bg3-dark {
+  background-color: #0c0a00;
+  background-image: repeating-linear-gradient(
+    45deg, #fbbf2408 0, #fbbf2408 1px, transparent 0, transparent 50%
+  );
+  background-size: 16px 16px;
+}
+.bg3-dark .blob {
+  position: absolute; bottom: -10%; right: -10%;
+  width: 50%; height: 50%;
+  border-radius: 9999px;
+  background: #d97706; opacity: .30; filter: blur(70px);
+}
+
+/* ─────────────────────────────────────────────
+   bg4 · Mesh Gradient
+───────────────────────────────────────────── */
+.bg4-light {
+  background:
+    radial-gradient(ellipse at 20% 50%, #ddd6fe 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, #bfdbfe 0%, transparent 60%),
+    radial-gradient(ellipse at 60% 80%, #fce7f3 0%, transparent 60%),
+    #fff;
+}
+.bg4-dark {
+  background:
+    radial-gradient(ellipse at 20% 50%, #4c1d95 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, #1e3a5f 0%, transparent 60%),
+    radial-gradient(ellipse at 60% 80%, #500724 0%, transparent 60%),
+    #09090b;
+}
+
+/* ─────────────────────────────────────────────
+   bg5 · Cuadrícula + Emerald
+───────────────────────────────────────────── */
+.bg5-light {
+  background-color: #f0fdf4;
+  background-image:
+    linear-gradient(#86efac30 1px, transparent 1px),
+    linear-gradient(90deg, #86efac30 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg5-light .b1 {
+  position: absolute; top: -10%; left: -10%;
+  width: 45%; height: 45%;
+  border-radius: 9999px;
+  background: #34d399; opacity: .20; filter: blur(70px);
+}
+.bg5-light .b2 {
+  position: absolute; bottom: -10%; right: -10%;
+  width: 40%; height: 40%;
+  border-radius: 9999px;
+  background: #10b981; opacity: .18; filter: blur(60px);
+}
+.bg5-dark {
+  background-color: #022c22;
+  background-image:
+    linear-gradient(#86efac10 1px, transparent 1px),
+    linear-gradient(90deg, #86efac10 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg5-dark .b1 {
+  position: absolute; top: -10%; left: -10%;
+  width: 45%; height: 45%;
+  border-radius: 9999px;
+  background: #059669; opacity: .30; filter: blur(70px);
+}
+.bg5-dark .b2 {
+  position: absolute; bottom: -10%; right: -10%;
+  width: 40%; height: 40%;
+  border-radius: 9999px;
+  background: #065f46; opacity: .30; filter: blur(60px);
+}
+
+/* ─────────────────────────────────────────────
+   bg6 · Ruido + Rose
+───────────────────────────────────────────── */
+.bg6-light {
+  background-color: #fff1f2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+.bg6-light .blob {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; height: 35%;
+  border-radius: 9999px;
+  background: #fb7185; opacity: .22; filter: blur(60px);
+}
+.bg6-dark {
+  background-color: #0f0204;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+}
+.bg6-dark .blob {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; height: 35%;
+  border-radius: 9999px;
+  background: #be123c; opacity: .35; filter: blur(60px);
+}
+
+/* ─────────────────────────────────────────────
+   bg7 · Radial Vignette
+───────────────────────────────────────────── */
+.bg7-light {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% -20%, #c7d2fe, transparent),
+    #fff;
+}
+.bg7-dark {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% -20%, #312e81, transparent),
+    #09090b;
+}
+
+/* ─────────────────────────────────────────────
+   bg8 · Líneas + Sky
+───────────────────────────────────────────── */
+.bg8-light {
+  background-color: #f0f9ff;
+  background-image: repeating-linear-gradient(
+    0deg, #bae6fd40 0, #bae6fd40 1px, transparent 0, transparent 30px
+  );
+}
+.bg8-light .blob {
+  position: absolute; top: 0; right: 0;
+  width: 50%; height: 50%;
+  border-radius: 9999px;
+  background: #38bdf8; opacity: .20; filter: blur(70px);
+}
+.bg8-dark {
+  background-color: #030712;
+  background-image: repeating-linear-gradient(
+    0deg, #7dd3fc10 0, #7dd3fc10 1px, transparent 0, transparent 30px
+  );
+}
+.bg8-dark .blob {
+  position: absolute; top: 0; right: 0;
+  width: 50%; height: 50%;
+  border-radius: 9999px;
+  background: #0284c7; opacity: .30; filter: blur(70px);
+}
+
+/* ─────────────────────────────────────────────
+   bg9 · Gradiente Diagonal
+───────────────────────────────────────────── */
+.bg9-light { background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%); }
+.bg9-dark  { background: linear-gradient(135deg, #0c0500 0%, #1c1100 100%); }
+
+/* ─────────────────────────────────────────────
+   bg10 · Patrón + Violet
+───────────────────────────────────────────── */
+.bg10-light {
+  background: #faf5ff;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg stroke='%23a78bfa' stroke-width='0.5' opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.bg10-light .blob {
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 65%; height: 35%;
+  border-radius: 9999px;
+  background: #8b5cf6; opacity: .18; filter: blur(70px);
+}
+.bg10-dark {
+  background: #0a0010;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg stroke='%237c3aed' stroke-width='0.5' opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.bg10-dark .blob {
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 65%; height: 35%;
+  border-radius: 9999px;
+  background: #6d28d9; opacity: .30; filter: blur(70px);
+}
+
+/* ─────────────────────────────────────────────
+   bg11 · Cónico
+───────────────────────────────────────────── */
+.bg11-light {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #e0e7ff, #fce7f3, #e0f2fe, #fef3c7, #e0e7ff
+  );
+}
+.bg11-dark {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #1e1b4b, #500724, #0c4a6e, #451a03, #1e1b4b
+  );
+}
+
+/* ─────────────────────────────────────────────
+   bg12 · Triple Blob
+───────────────────────────────────────────── */
+.bg12-light { background: #fff; }
+.bg12-light .b1 {
+  position: absolute; top: -15%; left: -15%;
+  width: 48%; height: 48%;
+  border-radius: 9999px;
+  background: #fda4af; opacity: .30; filter: blur(70px);
+}
+.bg12-light .b2 {
+  position: absolute; bottom: -15%; right: -15%;
+  width: 52%; height: 52%;
+  border-radius: 9999px;
+  background: #93c5fd; opacity: .30; filter: blur(80px);
+}
+.bg12-light .b3 {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38%; height: 38%;
+  border-radius: 9999px;
+  background: #6ee7b7; opacity: .20; filter: blur(60px);
+}
+.bg12-dark { background: #09090b; }
+.bg12-dark .b1 {
+  position: absolute; top: -15%; left: -15%;
+  width: 48%; height: 48%;
+  border-radius: 9999px;
+  background: #9f1239; opacity: .35; filter: blur(70px);
+}
+.bg12-dark .b2 {
+  position: absolute; bottom: -15%; right: -15%;
+  width: 52%; height: 52%;
+  border-radius: 9999px;
+  background: #1e40af; opacity: .35; filter: blur(80px);
+}
+.bg12-dark .b3 {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38%; height: 38%;
+  border-radius: 9999px;
+  background: #065f46; opacity: .25; filter: blur(60px);
+}
