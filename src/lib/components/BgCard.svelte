@@ -129,9 +129,6 @@
   .thumb-icon:hover {
     background: rgba(0, 0, 0, 0.55);
   }
-  .thumb-icon i {
-    font-size: 12px;
-  }
 
   .thumb-bg {
     position: absolute;
@@ -165,66 +162,5 @@
   }
   .thumb:hover .thumb-hint {
     opacity: 1;
-  }
-
-  .card-body {
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .card-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text);
-    letter-spacing: -0.01em;
-  }
-  .card-desc {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  .card-actions {
-    display: flex;
-    gap: 8px;
-    padding-top: 4px;
-  }
-
-  .btn {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    transition:
-      background 0.15s,
-      color 0.15s,
-      border-color 0.15s;
-    letter-spacing: 0.02em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-  .btn-outline {
-    background: transparent;
-    color: var(--muted);
-  }
-  .btn-outline:hover {
-    background: var(--border);
-    color: var(--text);
-    border-color: var(--muted);
-  }
-  .btn-solid {
-    background: var(--accent);
-    color: var(--accent-fg);
-    border-color: var(--accent);
-    flex: 1;
-  }
-  .btn-solid:hover {
-    opacity: 0.85;
   }
 </style>

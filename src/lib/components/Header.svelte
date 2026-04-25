@@ -85,21 +85,10 @@
     color: var(--muted);
     font-weight: 400;
   }
-  .logo i {
-    font-size: 12px;
-    color: var(--muted);
-  }
-
   .right {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-
-  .active-name {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: var(--mono);
   }
 
   .chip {
