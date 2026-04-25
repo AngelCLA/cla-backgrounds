@@ -6,7 +6,7 @@
   <div class="inner">
     <h1 class="hero-title">
       Fondos listos<br />
-      <em>para copiar y usar.</em>
+      <em>para copiar y usar</em>
     </h1>
 
     <div class="hero-bottom">

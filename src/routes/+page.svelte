@@ -9,7 +9,7 @@
 
   // Detectar preferencia del sistema: oscuro o claro
   const getSystemPreference = () => {
-    if (browser && window.matchMedia) {
+    if (typeof window !== "undefined" && window.matchMedia) {
       return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     return false;
@@ -17,34 +17,54 @@
 
   // Obtener preferencia guardada del usuario o usar la del sistema
   const getInitialTheme = () => {
-    if (browser) {
+    if (typeof window !== "undefined") {
       const saved = localStorage.getItem("theme-preference");
       if (saved === "dark" || saved === "light") {
         return saved === "dark";
       }
+      // Si no hay preferencia guardada, usar la del sistema
+      return getSystemPreference();
     }
-    return getSystemPreference();
+    // En SSR, no establecer por defecto
+    return false;
   };
 
-  let isDark = $state(getInitialTheme());
+  let isDark = $state<boolean>(false);
+  let isInitialized = $state(false);
 
-  // Aplicar el tema cuando isDark cambia
+  // Inicializar correctamente en el cliente con la preferencia del sistema
   $effect(() => {
-    if (browser) {
+    if (typeof window === "undefined" || isInitialized) return;
+
+    const saved = localStorage.getItem("theme-preference");
+    if (saved === "dark" || saved === "light") {
+      isDark = saved === "dark";
+    } else {
+      // Si no hay preferencia guardada, usar la del sistema
+      const systemIsDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      isDark = systemIsDark;
+    }
+    isInitialized = true;
+  });
+  $effect(() => {
+    if (typeof window !== "undefined") {
       document.documentElement.classList.toggle("dark", isDark);
       localStorage.setItem("theme-preference", isDark ? "dark" : "light");
     }
   });
 
-  // Escuchar cambios en la preferencia del sistema operativo (solo si el usuario no ha guardado una preferencia)
+  // Escuchar cambios en la preferencia del sistema operativo y sincronizar
   $effect(() => {
-    if (!browser) return;
+    if (typeof window === "undefined") return;
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     const handleChange = (e: MediaQueryListEvent) => {
-      const saved = localStorage.getItem("theme-preference");
-      if (!saved) {
+      const savedPreference = localStorage.getItem("theme-preference");
+      // Solo cambiar automáticamente si el usuario no ha establecido una preferencia
+      if (!savedPreference) {
         isDark = e.matches;
       }
     };

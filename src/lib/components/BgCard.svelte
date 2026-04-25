@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Background } from "$lib/backgrounds";
   import Code from "$lib/assets/icons/Code.svelte";
+  import { browser } from "$app/environment";
 
   let {
     bg,
@@ -18,7 +19,28 @@
     onOpenCode: (index: number) => void;
   } = $props();
 
-  const html = $derived(isDark ? bg.dark : bg.light);
+  // Detectar preferencia del sistema como fallback
+  let systemIsDark = $state(false);
+
+  $effect(() => {
+    if (!browser) return;
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    systemIsDark = mediaQuery.matches;
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      systemIsDark = e.matches;
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  });
+
+  // Usar isDark prop, pero con fallback a systemIsDark si cambia la preferencia del sistema
+  const currentTheme = $derived(isDark);
+  const html = $derived(currentTheme ? bg.dark : bg.light);
 </script>
 
 <div class="card" class:selected style="animation-delay: {index * 30}ms">

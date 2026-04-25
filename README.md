@@ -101,8 +101,8 @@ Ejemplo:
 ```typescript
 {
   title: "Gradient Sunset",
-  light: `<div class="absolute inset-0 bg-gradient-to-br from-yellow-100 via-orange-50 to-pink-100"></div>`,
-  dark: `<div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-red-900 to-purple-900"></div>`,
+  light: `<div class="absolute inset-0 bg-linear-to-br from-yellow-100 via-orange-50 to-pink-100"></div>`,
+  dark: `<div class="absolute inset-0 bg-linear-to-br from-slate-900 via-red-900 to-purple-900"></div>`,
   codeLight: `background: linear-gradient(to bottom right, rgb(254 243 199) 0%, rgb(255 245 238) 50%, rgb(252 228 236) 100%);`,
   codeDark: `background: linear-gradient(to bottom right, rgb(15 23 42) 0%, rgb(55 15 15) 50%, rgb(38 35 41) 100%);`,
 }
