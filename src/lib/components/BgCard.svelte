@@ -45,13 +45,16 @@
 
 <div class="card" class:selected style="animation-delay: {index * 30}ms">
   <!-- Thumbnail -->
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="thumb" on:click={() => onApply(index)} title="Aplicar fondo">
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div class="thumb" onclick={() => onApply(index)} title="Aplicar fondo">
     <button
       class="thumb-icon"
       type="button"
-      on:click|stopPropagation={() => onOpenCode(index)}
+      onclick={(e) => {
+        e.stopPropagation();
+        onOpenCode(index);
+      }}
       aria-label="Ver código"
     >
       <Code />
